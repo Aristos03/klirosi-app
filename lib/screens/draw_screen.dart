@@ -36,8 +36,8 @@ class DrawScreen extends StatefulWidget {
 
 class _DrawScreenState extends State<DrawScreen> with TickerProviderStateMixin {
   static const _maxDigits = 6;
-  static const _cellWidth = 76.0;
-  static const _cellHeight = 66.0;
+  static const _cellWidth = 70.0;
+  static const _cellHeight = 54.0;
   static const _reelGap = 10.0;
   // Slow, deliberately agonizing pacing: each digit (left to right) locks in
   // noticeably later than the one before it.
@@ -683,9 +683,9 @@ class _DrawScreenState extends State<DrawScreen> with TickerProviderStateMixin {
               child: Column(
                 children: [
                   _buildHeroHeader(scheme, totalTickets, poolSize),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 4),
                   _buildSponsorStrip(scheme),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 4),
                   _buildReel(scheme),
                   const SizedBox(height: 8),
                   _buildDrawButton(scheme, totalTickets, poolSize),
@@ -725,7 +725,7 @@ class _DrawScreenState extends State<DrawScreen> with TickerProviderStateMixin {
   Widget _buildSponsorStrip(ColorScheme scheme) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
         color: scheme.surfaceContainerHigh.withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(14),
@@ -734,11 +734,11 @@ class _DrawScreenState extends State<DrawScreen> with TickerProviderStateMixin {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/astrapi_logo.PNG', height: 40),
-          const SizedBox(width: 14),
-          Container(width: 1, height: 30, color: Colors.white24),
-          const SizedBox(width: 14),
-          Image.asset('assets/vir-favicon.png', height: 32),
+          Image.asset('assets/astrapi_logo.PNG', height: 76),
+          const SizedBox(width: 16),
+          Container(width: 1, height: 60, color: Colors.white24),
+          const SizedBox(width: 16),
+          Image.asset('assets/vir-favicon.png', height: 64),
         ],
       ),
     );
@@ -1375,7 +1375,7 @@ class _DrawScreenState extends State<DrawScreen> with TickerProviderStateMixin {
         '$number',
         style: TextStyle(
           fontFamily: 'monospace',
-          fontSize: 28,
+          fontSize: 22,
           fontWeight: FontWeight.bold,
           color: highlight ? scheme.onPrimary : Colors.white70,
         ),
