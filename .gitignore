@@ -1,6 +1,9 @@
 # Local Claude Code state (not part of the project)
 .claude/
 
+# Compiled installer output (rebuild from installer/klirosi_app.iss)
+installer/output/
+
 # Miscellaneous
 *.class
 *.log
