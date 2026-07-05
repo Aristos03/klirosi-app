@@ -680,18 +680,20 @@ class _DrawScreenState extends State<DrawScreen> with TickerProviderStateMixin {
           alignment: Alignment.topCenter,
           children: [
             SafeArea(
-              child: Column(
-                children: [
-                  _buildHeroHeader(scheme, totalTickets, poolSize),
-                  const SizedBox(height: 10),
-                  _buildReel(scheme),
-                  const SizedBox(height: 8),
-                  _buildDrawButton(scheme, totalTickets, poolSize),
-                  const SizedBox(height: 6),
-                  _buildExcludeToggle(scheme),
-                  const SizedBox(height: 4),
-                  Expanded(child: _buildHistoryCard(scheme)),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    _buildHeroHeader(scheme, totalTickets, poolSize),
+                    const SizedBox(height: 10),
+                    _buildReel(scheme),
+                    const SizedBox(height: 8),
+                    _buildDrawButton(scheme, totalTickets, poolSize),
+                    const SizedBox(height: 6),
+                    _buildExcludeToggle(scheme),
+                    const SizedBox(height: 4),
+                    SizedBox(height: 260, child: _buildHistoryCard(scheme)),
+                  ],
+                ),
               ),
             ),
             Align(
