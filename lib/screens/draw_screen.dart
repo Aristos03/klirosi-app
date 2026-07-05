@@ -684,6 +684,8 @@ class _DrawScreenState extends State<DrawScreen> with TickerProviderStateMixin {
                 children: [
                   _buildHeroHeader(scheme, totalTickets, poolSize),
                   const SizedBox(height: 6),
+                  _buildSponsorStrip(scheme),
+                  const SizedBox(height: 6),
                   _buildReel(scheme),
                   const SizedBox(height: 8),
                   _buildDrawButton(scheme, totalTickets, poolSize),
@@ -716,6 +718,28 @@ class _DrawScreenState extends State<DrawScreen> with TickerProviderStateMixin {
             if (_showReveal && _winnerNumber != null) _buildGrandReveal(scheme),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildSponsorStrip(ColorScheme scheme) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerHigh.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: Colors.white10),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset('assets/astrapi_logo.PNG', height: 40),
+          const SizedBox(width: 14),
+          Container(width: 1, height: 30, color: Colors.white24),
+          const SizedBox(width: 14),
+          Image.asset('assets/vir-favicon.png', height: 32),
+        ],
       ),
     );
   }

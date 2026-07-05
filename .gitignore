@@ -1,3 +1,6 @@
+# Local Claude Code state (not part of the project)
+.claude/
+
 # Miscellaneous
 *.class
 *.log
